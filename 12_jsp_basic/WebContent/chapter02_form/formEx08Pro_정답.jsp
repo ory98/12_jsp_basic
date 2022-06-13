@@ -8,10 +8,9 @@
 <body>
 
 	<%
-		
+		request.setCharacterEncoding("utf-8");
+	
 		String yourAccount = request.getParameter("yourAccount");
-		int yourMoney = Integer.parseInt(request.getParameter("yourMoney"));
-		
 		
 		String myAccount = request.getParameter("myAccount");
 		int myMoney = Integer.parseInt(request.getParameter("myMoney"));
@@ -25,7 +24,7 @@
 		if(yourAccount.equals(sendAccount)) {
 			if (sendMoney <= myMoney) {
 				myMoney = myMoney - sendMoney;
-				result = yourAccount + "계좌에" + sendMoney + "원을 이체 완료하였습니다. 남아있는 금액은" + myMoney + "원 입니다.";
+				result = yourAccount + " 계좌에 " + sendMoney + "원을 이체 완료하였습니다. 남아있는 금액은 " + myMoney + "원 입니다.";
 			}
 			else {
 				result = myAccount + "계좌에 잔액이" + (sendMoney-myMoney) + "만큼 부족합니다.";
