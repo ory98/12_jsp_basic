@@ -4,6 +4,15 @@
 <head>
 <meta charset="utf-8">
 <title>연습문제</title>
+<script>
+	
+	function checkInput() {
+		
+		document.f.submit();
+		
+	}
+
+</script>
 </head>
 <body>
 
@@ -16,7 +25,7 @@
 		
 	--> 
 
-	<form> 
+	<form action="formEx07Pro_정답.jsp" method="post" name="f"> 
 		<p>값 1: <input type="number" name="num1" ></p>
 		<p>값 2: <input type="number" name="num2" ></p>
 		<p>값 3: <input type="number" name="num3" ></p>
