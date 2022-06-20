@@ -8,11 +8,15 @@
 </head>
 <body>
 
-	 <!-- html 페이지 이동 방법 -->
-	 <%-- <jsp:forward page="forwardEx02_target.jsp"></jsp:forward> --%>
+	 <!-- html 페이지 이동 방법(jsp:param) -->
+	 <jsp:forward page="forwardEx02_target.jsp">
+	 	<jsp:param value="0x003" name="pdCd"/>
+	 	<jsp:param value="pad" name="pdNm"/>
+	 </jsp:forward>
 	 
-	 <!-- java 페이지 이동 방법 -->
+	 <!-- java 페이지 이동 방법(response.sendRedirect) -->
 	 <%
+	 	/*
 	 	String pdCd = "0x002";
 	 	String pdNm = "mouse";
 	 
@@ -23,10 +27,10 @@
 	 			url += "&pdNm=" + pdNm;
 	 	
 	 	response.sendRedirect(url);
-	 	
+	 	*/
 	 %>
 	 
-	 <!-- javascript 페이지 이동 방법 -->
+	 <!-- javascript 페이지 이동 방법(location.href)********가장 많이 사용 -->
 	 <script>                   
 	 	
 	 /*
