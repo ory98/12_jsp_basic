@@ -13,26 +13,20 @@
 	
 		request.setCharacterEncoding("utf-8");
 		
-		// 경로, 위치만 설정 (나머지는 복붙)
 		String fileName = request.getParameter("fileName");
-		String downloadFile = "C:\\Users\\15_web_jsb\\git\\12_jsp_basic\\12_jsp_basic\\WebContent\\img\\" + fileName; // 마지막에 '\\' 잊지말고 작성 
+		String downloadFile = "C:\\file_repository\\" + fileName; 
 	  
-		// 파일을 읽어 스트림에 담기
 		File file = new File(downloadFile);
 	    FileInputStream in = new FileInputStream(downloadFile);
 		
-		// 한글명 파일 처리 명령어
 	    fileName = new String(fileName.getBytes("utf-8"), "8859_1");   
 
-	    // 파일다운로드 헤더지정
-	    response.setContentType("application/octet-stream");							// 8비트로 된 데이터(지정되지 않은 파일 형식)
-	    response.setHeader("Content-Disposition", "attachment; filename=" + fileName ); // 파일 링크를 클릭했을때 다운로드 화면이 출력되게 처리함
+	    response.setContentType("application/octet-stream");							
+	    response.setHeader("Content-Disposition", "attachment; filename=" + fileName ); 
 	    
-	    //getOutputStream() 에러 해결 명령어 
 		out.clear();					
 		out = pageContext.pushBody();
 	    
-	    // 다운로드 명령어
 	    OutputStream os = response.getOutputStream();
 	    
 	    int length;
