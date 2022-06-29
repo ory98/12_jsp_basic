@@ -13,7 +13,9 @@
 		# JSTL (JSP Standard Tag Library) 
 		
 		- JSP 개발을 단순화하기위한 태그 library
-		- 태그라이브러리를 선언해주고 사용해야 한다. 
+		- 태그라이브러리를 선언해주고 사용해야 한다.*** 
+			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		- <c:set var~~/> 닫힌 태그를 꼭 작성해야한다.
 
 		1) 변수 생성
 		
