@@ -17,11 +17,10 @@ public class MyPage extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(); // session 객체 생성
-		String id= (String)session.getAttribute("id");					// getAttribute 메서드를 통하여 세션값을 가져온다.
+		HttpSession session = request.getSession(); 	// session 객체 생성
+		String id= (String)session.getAttribute("id");	// getAttribute 메서드를 통하여 세션값을 가져온다.
 		
 		/*
-		 * session을 이용하여 관련정보를 DB에서 가져오는 비즈니스 로직
 		 * 
 		 * request.setAttribute("속성명", DB에서 가져온 데이터);
 		 * request.setAttribute("속성명", DB에서 가져온 데이터);
